@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prem Narayan Sharma's Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    /* Main Styles */
+    main {
+      max-width: 1200px;
+      margin: 80px auto 0;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #007bff;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hero Section */
+    #hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .hero-content {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: right;
+    }
+
+    .hero-image img {
+      max-width: 300px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .about-content p {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    /* Portfolio Section */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 40px;
+    }
+
+    .project {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Form Styles */
+    form {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Animations */
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fadeIn {
+      animation-name: fadeIn;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .fadeInUp {
+      animation-name: fadeInUp;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="animated fadeIn">
+      <div class="hero-content">
+        <h1>Welcome to Prem Narayan Sharma's Portfolio</h1>
+        <p>Explore my work and get in touch.</p>
+        <a href="#portfolio" class="btn animated fadeInUp">View Portfolio</a>
+      </div>
+      <div class="hero-image">
+        <img src="prem-narayan-sharma.jpg" alt="Prem Narayan Sharma">
+      </div>
+    </section>
+
+    <section id="about" class="animated fadeIn">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>My name is Prem Narayan Sharma, and I am a first-year student pursuing a BTech degree in Computer Science (Artificial Intelligence and Machine Learning with Internet of Things) at GLA University in Mathura. I am from Hodal, Haryana.</p>
+        <p>At GLA University, I am exploring the exciting field of AI and IoT, and I am passionate about applying these technologies to solve real-world problems. In my free time, I enjoy learning about new advancements in the tech industry and working on personal projects.</p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="animated fadeIn">
+      <h2>My Portfolio</h2>
+      <div class="projects">
+        <a href="https://premsharma8168.github.io/uniin.com" class="project animated fadeInUp">
+          <img src="uniin.jpg" alt="Uniin Website">
+          <h3>Uniin Website</h3>
+          <p>My first project is a website for my company, Uniin. I designed and developed the website using HTML, CSS, and JavaScript.</p>
+        </a>
+        <a href="https://brijpublicschool.edu.in" class="project animated fadeInUp">
+          <img src="brij-public-school.jpg" alt="Brij Public School Website">
+          <h3>Brij Public School Website</h3>
+          <p>My second project is a website for Brij Public School. I collaborated with a team to create an informative and user-friendly website for the school.</p>
+        </a>
+        <a href="#" class="project animated fadeInUp">
+          <img src="another-website.jpg" alt="Another Website">
+          <h3>Another Website</h3>
+          <p>My third project is another website that I developed using a variety of modern web technologies.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="animated fadeIn">
+      <h2>Get in Touch</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" class="btn animated fadeInUp">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Prem Narayan Sharma's Portfolio</p>
+  </footer>
+
+  <script>
+
+    // Render the projects
+    const projectsContainer = document.querySelector('.projects');
+
+    projects.forEach(project => {
+      const projectElement = document.createElement('a');
+      projectElement.classList.add('project', 'animated', 'fadeInUp');
+      projectElement.href = project.link;
+
+      const imageElement = document.createElement('img');
+      imageElement.src = project.image;
+      imageElement.alt = project.title;
+
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = project.title;
+
+      const descriptionElement = document.createElement('p');
+      descriptionElement.textContent = project.description;
+
+      projectElement.appendChild(imageElement);
+      projectElement.appendChild(titleElement);
+      projectElement.appendChild(descriptionElement);
+
+      projectsContainer.appendChild(projectElement);
+    });
+
+    // Handle form submission
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // You can add your own logic to handle the form submission here
+      console.log('Form submitted:', { name, email, message });
+
+      // Reset the form
+      form.reset();
+    });
+  </script>
+</body>
+</html>
